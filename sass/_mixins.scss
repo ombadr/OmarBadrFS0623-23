@@ -1,0 +1,27 @@
+@mixin titleBig {
+  font-size: 7em;
+}
+
+@mixin floating(
+  $radius: 5px,
+  $shadow: 0 2px 5px rgba(0, 0, 0, 0.2),
+  $border: none
+) {
+  border-radius: $radius;
+  box-shadow: $shadow;
+  border: $border;
+
+  &:hover {
+    box-shadow: $shadow, 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@mixin grid($numElementsPerRow) {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    width: calc((100%) / #{$numElementsPerRow});
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,22 @@
+@mixin entranceAnimation(
+  $name,
+  $duration: 0.5s,
+  $startPoint: -20px,
+  $endPoint: 0,
+  $delay: 0
+) {
+  @keyframes #{$name} {
+    0% {
+      opacity: 0;
+      transform: translateY($startPoint);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY($endPoint);
+    }
+  }
+
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-delay: $delay;
+}

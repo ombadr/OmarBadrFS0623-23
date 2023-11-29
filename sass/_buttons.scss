@@ -1,0 +1,17 @@
+$buttonColors: (
+  approfondisci: #0e6cff,
+  accedi: #ff8700,
+  contattaci: #4caf50,
+);
+
+@each $buttonName, $buttonColor in $buttonColors {
+  .btn-#{$buttonName} {
+    background-color: $buttonColor;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+  }
+}

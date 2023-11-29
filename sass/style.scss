@@ -1,0 +1,94 @@
+@import 'reset';
+@import 'fonts';
+@import 'buttons';
+@import 'colors';
+@import 'mixins';
+@import 'spacings';
+@import 'animations';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fontFamily;
+}
+
+header {
+  background-color: $bgHero;
+}
+#header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  color: $textColor;
+}
+
+header img {
+  width: 100px;
+  height: auto;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+#first-section-wrapper {
+  background-color: $bgHero;
+  margin-bottom: 10em;
+}
+
+#first-section {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#left-section {
+  flex-basis: 50%;
+  @include entranceAnimation(leftSectionAnimation, 2s, -40px, 0, 0.5s);
+}
+
+#left-section h1 {
+  @include titleBig;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+#left-section p {
+  color: $textColor;
+  font-size: 1.5em;
+  line-height: 1.5;
+  width: 80%;
+  margin-bottom: 0.3em;
+}
+
+#right-section {
+  flex-basis: 50%;
+}
+
+#right-section img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 140px;
+
+  @include floating(8px, 0 4px 8px rgba(0, 0, 0, 0.1), 1px solid #ccc);
+
+  @include entranceAnimation(rightImageAnimation, 2s, -40px, 0, 0.5s);
+}
+
+#second-section {
+  width: 80%;
+  margin: 0 auto;
+  @include grid(4);
+
+  @include entranceAnimation(secondSectionAnimation, 2s, -40px, 0, 0.5s);
+}
+
+#second-section img {
+  @include floating(8px, 0 4px 8px rgba(0, 0, 0, 0.1), 1px solid #ccc);
+}
